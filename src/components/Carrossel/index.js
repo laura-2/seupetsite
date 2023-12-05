@@ -1,11 +1,12 @@
 import Image from "next/image";
 import {Swiper, SwiperSlide} from "swiper/react";
-import { historias } from "../../../data";
-import { Navigation, Pagination, Scrollbar, A11y, EffectCoverflow } from 'swiper/modules';
+import {Pagination, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import getPosts from "../../../getPosts";
 
-export default function Carrossel(){
+export default async function Carrossel(){
+    const data = await getPosts()
     return (
         <Swiper
         centeredSlides={true}
@@ -17,11 +18,11 @@ export default function Carrossel(){
         modules={[EffectCoverflow, Pagination]}
         className="my-36"
         >
-                {historias.map(card => (
-                    <SwiperSlide key={card.id} className="lista-carrossel">
+                {data.map(card => (
+                    <SwiperSlide key={card._id} className="lista-carrossel">
                     <div className="px-16 pb-20">
-                        <Image src={card.imagem} alt={card.titulo}/>
-                        <h1 className="titulo-carrossel">{card.titulo}</h1>
+                        <img src={card?.imagem} alt={card?.nome} width={20}/>
+                        <h1 className="titulo-carrossel">{card.topico}</h1>
                         <p className="text-sm">{card.descricao}</p>
                     </div>
                     

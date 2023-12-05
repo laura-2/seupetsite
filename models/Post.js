@@ -1,14 +1,15 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
+
 const {Schema} = mongoose;
 
 const postSchema = new Schema({
     nome: {
         type: String,
-        required: true
+        required: false
     },
     imagem: {
         type: String,
-        required: true
+        required: false
     },
     categoria: {
         type: String,
@@ -22,6 +23,6 @@ const postSchema = new Schema({
         type: String,
         required: true
     }
-}, {timestamps: true})
+}, {timestamps: true});
 
 export default mongoose.models.Post || mongoose.model("Post", postSchema)

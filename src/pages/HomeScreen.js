@@ -6,6 +6,7 @@ import Search from "@/components/Search";
 import VideoSection from "@/components/VideoSection";
 import { Fragment } from "react";
 
+
 export default function HomeScreen(){
     return(
         <Fragment>
@@ -14,7 +15,7 @@ export default function HomeScreen(){
         <VideoSection/>
         <Carrossel/>
         <Form/>
-        <Search/>
+        {/* <Search/> */}
         </Fragment>
     )
 }

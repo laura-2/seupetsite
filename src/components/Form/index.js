@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import { useState } from "react"
 
 export default function Form(){
@@ -16,7 +16,7 @@ export default function Form(){
     const handleSubmit = async (e) => {
         e.preventDefault();
     
-        const response = await fetch('/api/posts/route', {
+        const response = await fetch('/api/route', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
