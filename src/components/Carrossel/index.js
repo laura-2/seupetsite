@@ -1,3 +1,4 @@
+//rafce
 import Image from "next/image";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Pagination, EffectCoverflow } from 'swiper/modules';
@@ -21,7 +22,7 @@ export default async function Carrossel(){
                 {data.map(card => (
                     <SwiperSlide key={card._id} className="lista-carrossel">
                     <div className="px-16 pb-20">
-                        <img src={card?.imagem} alt={card?.nome} width={20}/>
+                        {/* <Image src={url} alt='Image' width={100} height={60} priority/> */}
                         <h1 className="titulo-carrossel">{card.topico}</h1>
                         <p className="text-sm">{card.descricao}</p>
                     </div>
