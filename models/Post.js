@@ -8,7 +8,7 @@ const postSchema = new Schema({
         required: false
     },
     imagem: {
-        type: String,
+        type: Array,
         required: false
     },
     categoria: {
